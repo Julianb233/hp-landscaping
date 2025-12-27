@@ -1,5 +1,7 @@
 // HP Landscaping - San Diego County Service Areas and Services
 
+export const LOGO_URL = "https://storage.googleapis.com/msgsndr/T5QQu0Akcy942Ox0QIk7/media/67e5bda482c9d83767bffe13.png";
+
 export const COMPANY_INFO = {
   name: "HP Landscaping",
   tagline: "Professional Landscaping Services in San Diego County",
@@ -9,7 +11,7 @@ export const COMPANY_INFO = {
   domain: "hplandscapingmaintenance.com",
   address: "San Diego, CA",
   hours: "Mon-Sat: 7AM - 6PM",
-  foundedYear: 2010,
+  foundedYear: 2000,
   licenseNumber: "CA-LIC-123456",
 };
 

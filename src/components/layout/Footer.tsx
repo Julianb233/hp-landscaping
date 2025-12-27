@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Phone,
@@ -8,9 +9,8 @@ import {
   Facebook,
   Instagram,
   Twitter,
-  Leaf,
 } from "lucide-react";
-import { COMPANY_INFO, SERVICES, SERVICE_AREAS } from "@/lib/constants";
+import { COMPANY_INFO, SERVICES, SERVICE_AREAS, LOGO_URL } from "@/lib/constants";
 
 export default function Footer() {
   const featuredAreas = SERVICE_AREAS.filter((area) => area.featured).slice(
@@ -41,9 +41,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#228B22] to-[#32CD32] rounded-full flex items-center justify-center shadow-lg">
-                <Leaf size={20} className="text-white" />
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden shadow-lg bg-white">
+                <Image
+                  src={LOGO_URL}
+                  alt="HP Landscaping"
+                  fill
+                  className="object-contain p-1"
+                  unoptimized
+                />
               </div>
               <div>
                 <span className="font-bold text-xl text-white">

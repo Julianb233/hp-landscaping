@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { COMPANY_INFO, NAV_LINKS, SERVICES } from "@/lib/constants";
+import { COMPANY_INFO, NAV_LINKS, SERVICES, LOGO_URL } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 export default function Header() {
@@ -52,13 +53,19 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-3 group">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 bg-gradient-to-br from-[#228B22] to-[#32CD32] rounded-full flex items-center justify-center shadow-md"
+              className="relative w-12 h-12 rounded-full overflow-hidden shadow-md bg-white"
             >
-              <span className="text-white font-bold text-lg">HP</span>
+              <Image
+                src={LOGO_URL}
+                alt="HP Landscaping"
+                fill
+                className="object-contain p-1"
+                unoptimized
+              />
             </motion.div>
             <div className="hidden sm:block">
               <span className="font-bold text-xl text-gray-900 group-hover:text-[#228B22] transition-colors">
