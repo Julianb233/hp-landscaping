@@ -1,46 +1,78 @@
 import Link from "next/link";
-import { Phone, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Phone, ArrowRight, Shield, Star, Wallet } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 
-export default function Hero() {
+interface HeroProps {
+  backgroundImage?: string;
+}
+
+export default function Hero({ backgroundImage = "/images/hero/main-hero.jpg" }: HeroProps) {
   return (
-    <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+    <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden">
+      {/* Background Image with Parallax Effect */}
+      <div className="absolute inset-0">
+        <Image
+          src={backgroundImage}
+          alt="Beautiful San Diego landscaping by HP Landscaping"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        {/* Premium Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-primary-dark/60 to-primary/40" />
+        {/* Animated Mesh Gradient */}
+        <div className="absolute inset-0 gradient-mesh opacity-60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 relative">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-primary-light/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-accent-light/15 rounded-full blur-3xl animate-blob animation-delay-4000" />
+      </div>
+
+      {/* Noise Texture Overlay */}
+      <div className="absolute inset-0 noise-overlay opacity-30 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center bg-green-600/30 border border-green-500/30 rounded-full px-4 py-2 text-sm">
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-              Serving San Diego County Since {COMPANY_INFO.foundedYear}
+          <div className="space-y-8 animate-fade-in-up">
+            {/* Badge */}
+            <div className="inline-flex items-center glass px-5 py-2.5 rounded-full">
+              <span className="w-2.5 h-2.5 bg-accent rounded-full mr-3 animate-pulse"></span>
+              <span className="text-sm font-medium">Serving San Diego County Since {COMPANY_INFO.foundedYear}</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            {/* Headline */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               Transform Your
-              <span className="block text-green-300">Outdoor Space</span>
+              <span className="block text-gradient bg-gradient-to-r from-accent-light via-accent to-primary-light bg-clip-text text-transparent">
+                Outdoor Space
+              </span>
             </h1>
 
-            <p className="text-xl text-green-100 max-w-lg">
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl text-gray-200 max-w-xl leading-relaxed">
               Professional landscaping, irrigation, and hardscaping services for homes and businesses throughout San Diego County. Beautiful, sustainable landscapes built to last.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors group"
+                className="group relative inline-flex items-center justify-center glass-card bg-white/95 text-primary-dark hover:bg-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 glow-hover overflow-hidden"
               >
-                Get Free Quote
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                <span className="relative z-10 flex items-center">
+                  Get Free Quote
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </span>
               </Link>
               <a
-                href={`tel:${COMPANY_INFO.phone}`}
-                className="inline-flex items-center justify-center border-2 border-white/30 hover:border-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all"
+                href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
+                className="group inline-flex items-center justify-center glass hover:bg-white/20 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/30 hover:border-white/50"
               >
                 <Phone className="mr-2" size={20} />
                 {COMPANY_INFO.phone}
@@ -48,38 +80,51 @@ export default function Hero() {
             </div>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-green-600/30 rounded-full flex items-center justify-center">
-                  <span className="text-green-300 text-lg">&#10003;</span>
+            <div className="flex flex-wrap gap-6 pt-6">
+              <div className="flex items-center gap-3 glass px-4 py-2 rounded-full">
+                <div className="w-10 h-10 bg-accent/30 rounded-full flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-accent-light" />
                 </div>
-                <span className="text-sm">Licensed & Insured</span>
+                <span className="text-sm font-medium">Licensed & Insured</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-green-600/30 rounded-full flex items-center justify-center">
-                  <span className="text-green-300 text-lg">&#9733;</span>
+              <div className="flex items-center gap-3 glass px-4 py-2 rounded-full">
+                <div className="w-10 h-10 bg-accent/30 rounded-full flex items-center justify-center">
+                  <Star className="w-5 h-5 text-accent-light" />
                 </div>
-                <span className="text-sm">5-Star Rated</span>
+                <span className="text-sm font-medium">5-Star Rated</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-green-600/30 rounded-full flex items-center justify-center">
-                  <span className="text-green-300 text-lg">&#128176;</span>
+              <div className="flex items-center gap-3 glass px-4 py-2 rounded-full">
+                <div className="w-10 h-10 bg-accent/30 rounded-full flex items-center justify-center">
+                  <Wallet className="w-5 h-5 text-accent-light" />
                 </div>
-                <span className="text-sm">Free Estimates</span>
+                <span className="text-sm font-medium">Free Estimates</span>
               </div>
             </div>
           </div>
 
-          {/* Image/Visual */}
-          <div className="hidden lg:block relative">
-            <div className="relative w-full aspect-square max-w-lg ml-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-green-600/20 rounded-3xl transform rotate-3"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 to-transparent rounded-3xl border border-green-400/20 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🌿</div>
-                  <p className="text-2xl font-semibold">Beautiful Landscapes</p>
-                  <p className="text-green-200">For San Diego Homes</p>
+          {/* Right Side - Glass Card Stats */}
+          <div className="hidden lg:block animate-slide-in-right">
+            <div className="relative">
+              {/* Floating Stats Cards */}
+              <div className="space-y-6">
+                <div className="glass-card p-8 rounded-2xl animate-float">
+                  <div className="text-5xl font-bold text-primary mb-2">15+</div>
+                  <div className="text-gray-600 font-medium">Years of Excellence</div>
                 </div>
+                <div className="glass-card p-8 rounded-2xl animate-float animation-delay-2000 ml-12">
+                  <div className="text-5xl font-bold text-primary mb-2">5,000+</div>
+                  <div className="text-gray-600 font-medium">Projects Completed</div>
+                </div>
+                <div className="glass-card p-8 rounded-2xl animate-float animation-delay-4000">
+                  <div className="text-5xl font-bold text-primary mb-2">98%</div>
+                  <div className="text-gray-600 font-medium">Customer Satisfaction</div>
+                </div>
+              </div>
+
+              {/* Background Glow */}
+              <div className="absolute inset-0 -z-10 blur-3xl opacity-30">
+                <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent rounded-full" />
+                <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-primary-light rounded-full" />
               </div>
             </div>
           </div>
@@ -88,8 +133,11 @@ export default function Hero() {
 
       {/* Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 50L48 45.7C96 41.3 192 32.7 288 30.2C384 27.7 480 31.3 576 38.5C672 45.7 768 56.3 864 58.8C960 61.3 1056 55.7 1152 50C1248 44.3 1344 38.7 1392 35.8L1440 33V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z" fill="white"/>
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+          <path
+            d="M0 60L48 55C96 50 192 40 288 38C384 36 480 42 576 52C672 62 768 76 864 78C960 80 1056 70 1152 62C1248 54 1344 48 1392 45L1440 42V120H1392C1344 120 1248 120 1152 120C1056 120 960 120 864 120C768 120 672 120 576 120C480 120 384 120 288 120C192 120 96 120 48 120H0V60Z"
+            fill="white"
+          />
         </svg>
       </div>
     </section>

@@ -300,33 +300,49 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-800 via-green-700 to-green-600 text-white py-20">
-        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[60vh] flex items-end text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={service.image}
+            alt={`${service.name} - HP Landscaping San Diego`}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Premium Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+          {/* Mesh Gradient Accent */}
+          <div className="absolute inset-0 gradient-mesh opacity-40" />
+        </div>
+
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link
             href="/services"
-            className="inline-flex items-center text-green-100 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center glass px-4 py-2 rounded-full text-white hover:bg-white/20 mb-8 transition-all"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to All Services
           </Link>
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up">
               {service.name}
             </h1>
-            <p className="text-xl md:text-2xl text-green-100 mb-8">
+            <p className="text-xl md:text-2xl text-gray-200 mb-10 max-w-2xl animate-fade-in-up stagger-1">
               {service.description}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-white text-green-700 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors"
+                className="inline-flex items-center justify-center glass-card bg-white/95 text-primary-dark hover:bg-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 glow-hover"
               >
                 Get Free Estimate
               </Link>
               <a
-                href={`tel:${COMPANY_INFO.phone}`}
+                href={`tel:${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
                 className="inline-flex items-center justify-center border-2 border-white/50 hover:border-white hover:bg-white/10 px-8 py-3 rounded-lg font-semibold transition-all"
               >
                 Call {COMPANY_INFO.phone}

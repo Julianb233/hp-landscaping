@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Palette, Droplets, Layers, Scissors, TreePine, Lightbulb, LucideIcon } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Palette, Droplets, Layers, Scissors, TreePine, Lightbulb, Waves, LucideIcon } from "lucide-react";
 
 const iconMap: Record<string, LucideIcon> = {
   Palette,
@@ -8,6 +9,7 @@ const iconMap: Record<string, LucideIcon> = {
   Scissors,
   TreePine,
   Lightbulb,
+  Waves,
 };
 
 interface ServiceCardProps {
@@ -16,38 +18,71 @@ interface ServiceCardProps {
   shortDescription: string;
   icon: string;
   features?: string[];
+  image?: string;
 }
 
-export default function ServiceCard({ id, name, shortDescription, icon, features }: ServiceCardProps) {
+export default function ServiceCard({ id, name, shortDescription, icon, features, image }: ServiceCardProps) {
   const IconComponent = iconMap[icon] || Palette;
 
   return (
-    <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-200">
-      <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-green-600 group-hover:scale-110 transition-all duration-300">
-        <IconComponent className="w-7 h-7 text-green-600 group-hover:text-white transition-colors" />
+    <Link
+      href={`/services/${id}`}
+      className="group relative block overflow-hidden rounded-2xl card-3d glow-hover"
+    >
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-green-800 to-green-900" />
+        )}
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
       </div>
 
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{name}</h3>
-      <p className="text-gray-600 mb-4">{shortDescription}</p>
+      {/* Glass Card Content */}
+      <div className="relative h-full min-h-[360px] flex flex-col justify-end p-6">
+        {/* Icon Badge */}
+        <div className="absolute top-6 left-6 glass-card w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-500">
+          <IconComponent className="w-7 h-7 text-primary" />
+        </div>
 
-      {features && features.length > 0 && (
-        <ul className="space-y-2 mb-4">
-          {features.slice(0, 3).map((feature, index) => (
-            <li key={index} className="flex items-center text-sm text-gray-500">
-              <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></span>
-              {feature}
-            </li>
-          ))}
-        </ul>
-      )}
+        {/* Content */}
+        <div className="space-y-3">
+          <h3 className="text-2xl font-bold text-white group-hover:text-accent-light transition-colors">
+            {name}
+          </h3>
+          <p className="text-gray-200 text-sm leading-relaxed">
+            {shortDescription}
+          </p>
 
-      <Link
-        href={`/services/${id}`}
-        className="inline-flex items-center text-green-600 font-medium hover:text-green-700 group/link"
-      >
-        Learn More
-        <ArrowRight className="ml-1 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-      </Link>
-    </div>
+          {features && features.length > 0 && (
+            <ul className="space-y-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              {features.slice(0, 3).map((feature, index) => (
+                <li key={index} className="flex items-center text-sm text-gray-300">
+                  <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <div className="inline-flex items-center text-accent-light font-medium pt-2 group-hover:gap-2 transition-all">
+            Learn More
+            <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </div>
+        </div>
+
+        {/* Shimmer Effect on Hover */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+          <div className="absolute inset-0 shimmer" />
+        </div>
+      </div>
+    </Link>
   );
 }

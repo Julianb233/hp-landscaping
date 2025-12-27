@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { MapPin, Phone, Star, CheckCircle2, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Star, CheckCircle2, ArrowRight, Users } from "lucide-react";
 import { SERVICE_AREAS, SERVICES, COMPANY_INFO, TESTIMONIALS } from "@/lib/constants";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
@@ -215,24 +216,50 @@ export default async function AreaPage({ params }: AreaPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[60vh] flex items-end text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src={area.image || `/images/areas/${area.id}.jpg`}
+            alt={`Landscaping services in ${area.name}, California`}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Premium Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/30" />
+          {/* Mesh Gradient Accent */}
+          <div className="absolute inset-0 gradient-mesh opacity-40" />
+        </div>
+
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-green-200 mb-4">
-              <MapPin size={20} />
-              <span className="text-lg">{area.county}</span>
+            {/* Location Badge */}
+            <div className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6 animate-fade-in-up">
+              <MapPin size={18} className="text-accent-light" />
+              <span className="text-sm font-medium">{area.county}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up stagger-1">
               Landscaping Services in {area.name}, CA
             </h1>
-            <p className="text-xl md:text-2xl text-green-100 mb-8">
-              Transform your {area.name} property with professional landscaping services from San Diego County's trusted experts. Serving {area.population} residents with pride.
+
+            <p className="text-xl md:text-2xl text-gray-200 mb-6 max-w-2xl animate-fade-in-up stagger-2">
+              Transform your {area.name} property with professional landscaping services from San Diego County's trusted experts.
             </p>
-            <div className="flex flex-wrap gap-4">
+
+            {/* Population Badge */}
+            <div className="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full mb-10 animate-fade-in-up stagger-2">
+              <Users size={18} className="text-primary" />
+              <span className="text-sm font-medium text-gray-800">Proudly serving {area.population} residents</span>
+            </div>
+
+            <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors group"
+                className="inline-flex items-center justify-center glass-card bg-white/95 text-primary-dark hover:bg-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 glow-hover group"
               >
                 Get Free Quote
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />

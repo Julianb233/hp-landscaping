@@ -108,6 +108,22 @@ export const SERVICES = [
     ],
     image: "/images/services/outdoor-lighting.jpg",
   },
+  {
+    id: "water-features",
+    name: "Water Walls & Waterfalls",
+    shortDescription: "Stunning water features to transform your outdoor space",
+    description: "Create a tranquil paradise with our custom water wall and waterfall installations. From modern water walls to natural rock waterfalls, we design and build breathtaking water features that add movement, sound, and serenity to your San Diego landscape.",
+    icon: "Waves",
+    features: [
+      "Custom Water Walls",
+      "Natural Rock Waterfalls",
+      "Pond & Stream Design",
+      "Fountain Installation",
+      "Koi Pond Construction",
+      "Water Feature Lighting",
+    ],
+    image: "/images/services/water-features.jpg",
+  },
 ];
 
 export const SERVICE_AREAS = [
@@ -118,6 +134,7 @@ export const SERVICE_AREAS = [
     description: "Serving all neighborhoods in San Diego including Downtown, La Jolla, Pacific Beach, Mission Valley, and more.",
     population: "1.4M+",
     featured: true,
+    image: "/images/areas/san-diego.jpg",
   },
   {
     id: "chula-vista",
@@ -126,6 +143,7 @@ export const SERVICE_AREAS = [
     description: "Professional landscaping services throughout Chula Vista, from Eastlake to Otay Ranch.",
     population: "275K+",
     featured: true,
+    image: "/images/areas/chula-vista.jpg",
   },
   {
     id: "oceanside",
@@ -134,6 +152,7 @@ export const SERVICE_AREAS = [
     description: "Coastal landscaping expertise for Oceanside residents and businesses.",
     population: "176K+",
     featured: true,
+    image: "/images/areas/oceanside.jpg",
   },
   {
     id: "escondido",
@@ -142,6 +161,7 @@ export const SERVICE_AREAS = [
     description: "Serving Escondido with drought-tolerant landscaping solutions.",
     population: "151K+",
     featured: true,
+    image: "/images/areas/escondido.jpg",
   },
   {
     id: "carlsbad",
@@ -150,6 +170,7 @@ export const SERVICE_AREAS = [
     description: "Premium landscaping services for Carlsbad's beautiful communities.",
     population: "114K+",
     featured: true,
+    image: "/images/areas/carlsbad.jpg",
   },
   {
     id: "el-cajon",
@@ -158,6 +179,7 @@ export const SERVICE_AREAS = [
     description: "Expert landscaping tailored to El Cajon's unique climate.",
     population: "106K+",
     featured: false,
+    image: "/images/areas/el-cajon.jpg",
   },
   {
     id: "vista",
@@ -166,6 +188,7 @@ export const SERVICE_AREAS = [
     description: "Full-service landscaping for Vista homeowners and businesses.",
     population: "101K+",
     featured: false,
+    image: "/images/areas/vista.jpg",
   },
   {
     id: "san-marcos",
@@ -174,6 +197,7 @@ export const SERVICE_AREAS = [
     description: "Comprehensive landscaping services throughout San Marcos.",
     population: "97K+",
     featured: false,
+    image: "/images/areas/san-marcos.jpg",
   },
   {
     id: "encinitas",
@@ -182,6 +206,7 @@ export const SERVICE_AREAS = [
     description: "Coastal and inland landscaping expertise for Encinitas.",
     population: "63K+",
     featured: false,
+    image: "/images/areas/encinitas.jpg",
   },
   {
     id: "national-city",
@@ -190,6 +215,7 @@ export const SERVICE_AREAS = [
     description: "Affordable landscaping solutions for National City.",
     population: "61K+",
     featured: false,
+    image: "/images/areas/national-city.jpg",
   },
   {
     id: "la-mesa",
@@ -198,6 +224,7 @@ export const SERVICE_AREAS = [
     description: "Beautiful landscaping services for the Jewel of the Hills.",
     population: "60K+",
     featured: false,
+    image: "/images/areas/la-mesa.jpg",
   },
   {
     id: "santee",
@@ -206,6 +233,7 @@ export const SERVICE_AREAS = [
     description: "Residential and commercial landscaping in Santee.",
     population: "58K+",
     featured: false,
+    image: "/images/areas/santee.jpg",
   },
   {
     id: "poway",
@@ -214,6 +242,7 @@ export const SERVICE_AREAS = [
     description: "Premium landscaping for Poway's upscale communities.",
     population: "49K+",
     featured: false,
+    image: "/images/areas/poway.jpg",
   },
   {
     id: "del-mar",
@@ -222,6 +251,7 @@ export const SERVICE_AREAS = [
     description: "Luxury landscaping services for Del Mar estates.",
     population: "4K+",
     featured: false,
+    image: "/images/areas/del-mar.jpg",
   },
   {
     id: "coronado",
@@ -230,6 +260,7 @@ export const SERVICE_AREAS = [
     description: "Island landscaping specialists serving Coronado.",
     population: "24K+",
     featured: false,
+    image: "/images/areas/coronado.jpg",
   },
 ];
 

@@ -44,13 +44,13 @@ export default function Home() {
       <Hero />
 
       {/* Stats Section */}
-      <section className="py-12 bg-white relative -mt-8 z-10">
+      <section className="py-12 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white rounded-2xl shadow-xl p-8 -mt-24 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 glass-card rounded-3xl p-10 -mt-24 relative z-10 glow-green">
             {STATS.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">{stat.value}</div>
-                <div className="text-gray-600 text-sm md:text-base">{stat.label}</div>
+              <div key={index} className="text-center p-4">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.value}</div>
+                <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -134,62 +134,72 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-green-600 font-semibold text-sm uppercase tracking-wider">Our Services</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+      <section className="py-24 gradient-nature relative overflow-hidden">
+        {/* Background Decorations */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-16">
+            <span className="inline-block glass-green px-4 py-2 rounded-full text-sm font-semibold text-white mb-4">
+              Our Services
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Professional Landscaping Services in San Diego
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From custom landscape design to ongoing maintenance, we offer comprehensive services to create and maintain your perfect outdoor space.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {SERVICES.map((service) => (
               <ServiceCard key={service.id} {...service} />
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-14">
             <Link
               href="/services"
-              className="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors group"
+              className="inline-flex items-center glass-green hover:scale-105 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 glow-hover group"
             >
               View All Services
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* Service Areas Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <span className="text-green-600 font-semibold text-sm uppercase tracking-wider">Service Areas</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+          <div className="text-center mb-16">
+            <span className="inline-block glass-green px-4 py-2 rounded-full text-sm font-semibold text-white mb-4">
+              Service Areas
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Serving All of San Diego County
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               From the coast to the inland valleys, HP Landscaping provides expert landscaping services throughout San Diego County.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredAreas.map((area) => (
               <AreaCard key={area.id} {...area} />
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-14">
             <Link
               href="/areas"
-              className="inline-flex items-center text-green-600 font-semibold hover:text-green-700 group"
+              className="inline-flex items-center glass-card hover:scale-105 text-primary-dark px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 group"
             >
               View All {SERVICE_AREAS.length} Service Areas
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
           </div>
         </div>
