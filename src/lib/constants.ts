@@ -3,8 +3,10 @@
 export const COMPANY_INFO = {
   name: "HP Landscaping",
   tagline: "Professional Landscaping Services in San Diego County",
-  phone: "(619) 555-LAWN",
-  email: "info@hplandscaping.com",
+  phone: "(619) 935-3965",
+  email: "info@hplandscapingmaintenance.com",
+  website: "https://www.hplandscapingmaintenance.com",
+  domain: "hplandscapingmaintenance.com",
   address: "San Diego, CA",
   hours: "Mon-Sat: 7AM - 6PM",
   foundedYear: 2010,
