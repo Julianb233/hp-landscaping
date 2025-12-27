@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* HP Landscaping Brand Tokens */
+:root {
+  /* Primary Colors */
+  --hp-forest: #228B22;
+  --hp-forest-dark: #1B6B1B;
+  --hp-forest-light: #2DA02D;
+
+  /* Accent Colors */
+  --hp-lime: #32CD32;
+  --hp-lime-dark: #28A428;
+  --hp-lime-light: #90EE90;
+
+  /* Neutrals */
+  --hp-white: #FFFFFF;
+  --hp-off-white: #F8FAF8;
+  --hp-gray-50: #F5F7F5;
+  --hp-gray-100: #E8ECE8;
+  --hp-gray-200: #D1D9D1;
+  --hp-gray-300: #A8B5A8;
+  --hp-gray-400: #7A8A7A;
+  --hp-gray-500: #5C6B5C;
+  --hp-gray-600: #485548;
+  --hp-gray-700: #374037;
+  --hp-gray-800: #252B25;
+  --hp-gray-900: #1A1D1A;
+
+  /* Semantic */
+  --hp-success: #22C55E;
+  --hp-warning: #EAB308;
+  --hp-error: #EF4444;
+  --hp-info: #3B82F6;
+
+  /* Background & Foreground */
+  --background: var(--hp-white);
+  --foreground: var(--hp-gray-900);
+
+  /* Component Tokens */
+  --card-bg: var(--hp-white);
+  --card-border: var(--hp-gray-200);
+  --muted: var(--hp-gray-100);
+  --muted-foreground: var(--hp-gray-500);
+  --accent: var(--hp-lime);
+  --accent-foreground: var(--hp-forest-dark);
+  --primary: var(--hp-forest);
+  --primary-foreground: var(--hp-white);
+  --secondary: var(--hp-gray-100);
+  --secondary-foreground: var(--hp-gray-800);
+  --border: var(--hp-gray-200);
+  --input: var(--hp-gray-200);
+  --ring: var(--hp-forest);
+
+  /* Spacing */
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--hp-forest);
+  --color-primary-dark: var(--hp-forest-dark);
+  --color-primary-light: var(--hp-forest-light);
+  --color-accent: var(--hp-lime);
+  --color-accent-dark: var(--hp-lime-dark);
+  --color-accent-light: var(--hp-lime-light);
+  --color-muted: var(--hp-gray-100);
+  --color-muted-foreground: var(--hp-gray-500);
+  --color-card: var(--card-bg);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Base Styles */
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--hp-lime-light);
+  color: var(--hp-forest-dark);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--hp-forest);
+  outline-offset: 2px;
+}
+
+/* Gradient utilities */
+.gradient-forest {
+  background: linear-gradient(135deg, var(--hp-forest) 0%, var(--hp-forest-dark) 100%);
+}
+
+.gradient-lime {
+  background: linear-gradient(135deg, var(--hp-lime) 0%, var(--hp-forest) 100%);
+}
+
+.gradient-nature {
+  background: linear-gradient(180deg, var(--hp-off-white) 0%, var(--hp-gray-50) 100%);
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(135deg, var(--hp-forest) 0%, var(--hp-lime) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Blob animation for hero */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -30px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.9); }
+  75% { transform: translate(30px, 10px) scale(1.05); }
+}
+
+.animate-blob {
+  animation: blob 8s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
