@@ -321,6 +321,7 @@ export const NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/areas", label: "Service Areas" },
   { href: "/gallery", label: "Gallery" },
+  { href: "/booking", label: "Book Now" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

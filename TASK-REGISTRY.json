@@ -1,0 +1,94 @@
+{
+  "projectName": "hp-landscaping",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-28T21:15:00Z",
+  "availableTasks": [],
+  "claimedTasks": [],
+  "completedTasks": [
+    {
+      "id": "booking-calendar-component",
+      "title": "Create BookingCalendar component with date/time selection",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:00:00Z",
+      "completedAt": "2025-12-28T21:05:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/components/BookingCalendar.tsx"
+      ]
+    },
+    {
+      "id": "booking-form-component",
+      "title": "Build appointment booking form with service selection",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:05:00Z",
+      "completedAt": "2025-12-28T21:08:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/components/BookingForm.tsx"
+      ]
+    },
+    {
+      "id": "booking-page",
+      "title": "Create booking page route at /booking",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:08:00Z",
+      "completedAt": "2025-12-28T21:10:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/app/booking/page.tsx"
+      ]
+    },
+    {
+      "id": "booking-api",
+      "title": "Implement API route for booking submission",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:10:00Z",
+      "completedAt": "2025-12-28T21:11:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/app/api/booking/route.ts"
+      ]
+    },
+    {
+      "id": "booking-button-component",
+      "title": "Create reusable BookingButton component",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:11:00Z",
+      "completedAt": "2025-12-28T21:12:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/components/BookingButton.tsx"
+      ]
+    },
+    {
+      "id": "integrate-booking-cta",
+      "title": "Integrate booking CTA into CTASection component",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:12:00Z",
+      "completedAt": "2025-12-28T21:13:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/components/CTASection.tsx"
+      ]
+    },
+    {
+      "id": "add-booking-navigation",
+      "title": "Add booking link to main navigation",
+      "agent": "Fiona-Frontend-2",
+      "claimedAt": "2025-12-28T21:13:00Z",
+      "completedAt": "2025-12-28T21:14:00Z",
+      "phase": "booking-system",
+      "files": [
+        "/root/github-repos/hp-landscaping/src/lib/constants.ts"
+      ]
+    }
+  ],
+  "taskStatistics": {
+    "total": 7,
+    "available": 0,
+    "claimed": 0,
+    "completed": 7,
+    "blocked": 0,
+    "avgCompletionTime": "15min"
+  }
+}
