@@ -63,9 +63,9 @@ export default function CTA() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
-              Ready to Transform Your
+              Stop Managing Vendors.
               <span className="block text-lime-300 mt-2">
-                Outdoor Living Space?
+                Start Managing Results.
               </span>
             </h2>
           </motion.div>
@@ -77,8 +77,8 @@ export default function CTA() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl lg:text-2xl text-green-100 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Get your free, no-obligation quote today. Our expert team is ready to
-            bring your landscape vision to life.
+            In 15 minutes, we&apos;ll calculate your &quot;vendor management tax&quot; and show you
+            exactly how many hours you&apos;ll save each month with an SLA-backed contract.
           </motion.p>
 
           {/* Contact Info Cards */}
@@ -156,7 +156,7 @@ export default function CTA() {
                 "hover:scale-110 transform"
               )}
             >
-              Get Free Quote
+              Book Your Time Buyback Analysis
               <ArrowRight
                 className="ml-2 group-hover:translate-x-1 transition-transform"
                 size={20}
@@ -188,10 +188,10 @@ export default function CTA() {
             className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-green-100"
           >
             {[
-              "✓ Licensed & Insured",
-              "✓ Free Estimates",
-              "✓ 100% Satisfaction Guaranteed",
-              "✓ Same-Day Response",
+              "✓ SLA-Backed Guarantee",
+              "✓ Dedicated Account Manager",
+              "✓ 99.4% On-Time Reliability",
+              "✓ 24-Hour Emergency Response",
             ].map((feature, index) => (
               <motion.div
                 key={feature}

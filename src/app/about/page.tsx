@@ -3,8 +3,8 @@ import { COMPANY_INFO, STATS, SERVICES } from "@/lib/constants";
 import { Award, Users, Heart, Leaf, Shield, Star } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us - 15+ Years of Professional Landscaping Excellence",
-  description: `Learn about HP Landscaping, San Diego County's trusted landscaping company since ${COMPANY_INFO.foundedYear}. Licensed, insured, and committed to sustainable, beautiful landscapes. Meet our team of experts.`,
+  title: "About Us - 25+ Years of Commercial Landscaping Excellence",
+  description: `HP Landscaping: San Diego's most reliable commercial landscaping contractor since ${COMPANY_INFO.foundedYear}. SLA-backed contracts, 99.4% on-time reliability, and dedicated account managers for property managers and HOAs.`,
   keywords: [
     "about HP Landscaping",
     "San Diego landscaper",
@@ -84,24 +84,24 @@ const organizationSchema = {
 export default function AboutPage() {
   const values = [
     {
+      icon: Shield,
+      title: "Reliability First",
+      description: "99.4% on-time record. SLA guarantees. Fixed service windows. We show up when we say we will.",
+    },
+    {
       icon: Heart,
-      title: "Customer First",
-      description: "Your satisfaction is our top priority. We listen, understand, and deliver beyond expectations.",
+      title: "Zero Headaches",
+      description: "Dedicated account managers, tenant communication handling, and one point of contact for your entire portfolio.",
     },
     {
       icon: Leaf,
       title: "Sustainability",
-      description: "Eco-friendly practices, drought-tolerant designs, and water conservation are at our core.",
-    },
-    {
-      icon: Shield,
-      title: "Quality Craftsmanship",
-      description: "We take pride in every project, ensuring lasting beauty and functionality.",
+      description: "Eco-friendly practices and drought-tolerant designs that reduce your water costs and environmental impact.",
     },
     {
       icon: Star,
-      title: "Excellence",
-      description: "Continuous training, cutting-edge techniques, and attention to detail in everything we do.",
+      title: "Accountability",
+      description: "Monthly photo reports, quarterly planning, and transparent communication. No excuses, no exceptions.",
     },
   ];
 
@@ -167,8 +167,13 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center bg-green-600/30 border border-green-500/30 rounded-full px-4 py-2 text-sm backdrop-blur-sm mb-6">
+              <span className="w-2 h-2 bg-lime-400 rounded-full mr-2 animate-pulse" />
+              Serving San Diego County Since {COMPANY_INFO.foundedYear}
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Cultivating Beauty Since {COMPANY_INFO.foundedYear}
+              25 Years of Showing Up
+              <span className="block text-lime-300 mt-2">On Time. Every Time.</span>
             </h1>
             <p className="text-xl md:text-2xl text-green-100 mb-8">
               {COMPANY_INFO.tagline}
@@ -203,27 +208,28 @@ export default function AboutPage() {
 
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="text-xl leading-relaxed mb-6">
-                Founded in {COMPANY_INFO.foundedYear}, HP Landscaping began with a simple mission: to create
-                beautiful, sustainable landscapes that enhance San Diego County's natural beauty while conserving
-                our precious water resources.
+                Founded in {COMPANY_INFO.foundedYear}, HP Landscaping began with a simple promise: <strong>show up when
+                we say we will, do what we say we'll do.</strong> Twenty-five years later, that promise has become
+                our competitive advantage.
               </p>
 
               <p className="text-lg leading-relaxed mb-6">
-                What started as a small team of passionate landscapers has grown into San Diego County's most
-                trusted landscaping company, with over 50 dedicated professionals serving thousands of satisfied
-                customers across the region.
+                We've grown from a small crew into San Diego County's most reliable commercial landscaping contractor,
+                with over 50 dedicated professionals and a 99.4% on-time service record across 50,000+ scheduled services.
+                Property managers, HOA boards, and facilities directors trust us because we eliminate the headaches
+                of vendor management.
               </p>
 
               <p className="text-lg leading-relaxed mb-6">
-                Our journey has been guided by a commitment to excellence, innovation, and sustainability. We've
-                pioneered drought-tolerant landscape designs, implemented cutting-edge irrigation technology, and
-                earned our reputation as leaders in eco-friendly landscaping practices.
+                Our SLA-backed contracts aren't just marketing—they're a guarantee. We're so confident in our
+                reliability that if we miss a service window, that week is free. Miss twice in 90 days, and
+                you can cancel penalty-free while we pay your first month with a replacement vendor.
               </p>
 
               <p className="text-lg leading-relaxed">
-                Today, we're proud to be recognized as one of San Diego's premier landscaping companies, known for
-                our quality craftsmanship, customer-first approach, and dedication to creating outdoor spaces that
-                our clients love for years to come.
+                Today, we're proud to serve as the landscaping department for dozens of commercial properties across
+                San Diego County. Our dedicated account managers, fixed service windows, and proactive communication
+                give you back the 4-6 hours per month you used to spend chasing unreliable vendors.
               </p>
             </div>
           </div>
@@ -362,38 +368,39 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-              Why San Diego Trusts HP Landscaping
+              Why Property Managers Choose HP Landscaping
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-xl text-gray-900 mb-3">Local Expertise</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                <h3 className="font-bold text-xl text-gray-900 mb-3">Time Buyback</h3>
                 <p className="text-gray-600">
-                  Born and raised in San Diego, we understand our unique climate, soil conditions, and water
-                  conservation needs better than anyone.
+                  Our clients save an average of 4.2 hours per month on vendor management.
+                  One point of contact, fixed service windows, zero chasing.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-xl text-gray-900 mb-3">Comprehensive Services</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                <h3 className="font-bold text-xl text-gray-900 mb-3">SLA-Backed Guarantee</h3>
                 <p className="text-gray-600">
-                  From design to installation to maintenance, we handle every aspect of your landscape with
-                  expertise and care.
+                  Miss a service? That week is free. Miss twice in 90 days? Cancel penalty-free
+                  and we pay your first month with a replacement vendor.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-xl text-gray-900 mb-3">Sustainable Practices</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                <h3 className="font-bold text-xl text-gray-900 mb-3">Multi-Property Coordination</h3>
                 <p className="text-gray-600">
-                  We lead the industry in eco-friendly landscaping, specializing in drought-tolerant designs
-                  and water-efficient irrigation.
+                  Managing 3, 10, or 50 properties? We coordinate across your entire portfolio
+                  with quarterly budget planning and monthly reporting.
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="font-bold text-xl text-gray-900 mb-3">Customer Satisfaction</h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-700">
+                <h3 className="font-bold text-xl text-gray-900 mb-3">Zero Tenant Complaints</h3>
                 <p className="text-gray-600">
-                  With a 98% satisfaction rate and hundreds of five-star reviews, our work speaks for itself.
+                  We handle tenant communication directly. When someone complains, they call us,
+                  not you. Your phone stays quiet.
                 </p>
               </div>
             </div>
@@ -405,23 +412,24 @@ export default function AboutPage() {
       <section className="bg-green-700 text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Work With San Diego's Best?
+            Ready to Reclaim Your Time?
           </h2>
           <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust HP Landscaping with their outdoor spaces.
+            In 15 minutes, we'll calculate your "vendor management tax" and show you
+            exactly how many hours you'll save each month with an SLA-backed contract.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
               className="inline-block bg-white text-green-700 font-bold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
-              Get Free Estimate
+              Book Your Time Buyback Analysis
             </a>
             <a
-              href="/gallery"
+              href="/commercial"
               className="inline-block bg-green-600 text-white font-bold py-4 px-8 rounded-lg hover:bg-green-500 transition-colors shadow-lg border-2 border-white"
             >
-              View Our Work
+              View Commercial Packages
             </a>
           </div>
         </div>

@@ -4,7 +4,7 @@ export const LOGO_URL = "https://storage.googleapis.com/msgsndr/T5QQu0Akcy942Ox0
 
 export const COMPANY_INFO = {
   name: "HP Landscaping",
-  tagline: "Professional Landscaping Services in San Diego County",
+  tagline: "SLA-Backed Commercial Landscaping for San Diego Businesses",
   phone: "(619) 935-3965",
   email: "info@hplandscapingmaintenance.com",
   website: "https://www.hplandscapingmaintenance.com",
@@ -13,6 +13,7 @@ export const COMPANY_INFO = {
   hours: "Mon-Sat: 7AM - 6PM",
   foundedYear: 2000,
   licenseNumber: "CA-LIC-123456",
+  valueProposition: "We become your landscaping department—scheduled, reliable, guaranteed.",
 };
 
 export const SERVICES = [
@@ -272,49 +273,123 @@ export const TESTIMONIALS = [
   {
     id: 1,
     name: "Sarah M.",
-    location: "La Jolla, San Diego",
+    location: "Property Manager, La Jolla",
     rating: 5,
-    text: "HP Landscaping transformed our backyard into a beautiful oasis. Their attention to detail and knowledge of drought-tolerant plants is impressive!",
-    service: "Landscape Design",
+    text: "I haven't thought about landscaping in 6 months. HP handles everything across my 12 properties. That's easily 5-6 hours a month I've gotten back.",
+    service: "Commercial Maintenance",
+    timeSaved: "5-6 hours/month",
   },
   {
     id: 2,
     name: "Michael R.",
-    location: "Carlsbad",
+    location: "HOA Board President, Carlsbad",
     rating: 5,
-    text: "Professional, punctual, and excellent work. Our new irrigation system has already reduced our water bill significantly.",
-    service: "Irrigation Systems",
+    text: "Zero tenant complaints since switching to HP. Their SLA guarantee isn't just marketing—they actually show up when they say they will.",
+    service: "HOA Contract",
+    timeSaved: "4 hours/month",
   },
   {
     id: 3,
     name: "Jennifer L.",
-    location: "Chula Vista",
+    location: "Facilities Director, Chula Vista",
     rating: 5,
-    text: "The team installed a beautiful paver patio and fire pit. We now spend every evening outside enjoying our new outdoor living space.",
-    service: "Hardscaping",
+    text: "The dedicated account manager is a game-changer. One point of contact for our entire office park. No more chasing vendors.",
+    service: "Commercial Contract",
+    timeSaved: "8 hours/month",
   },
   {
     id: 4,
     name: "David K.",
-    location: "Escondido",
+    location: "Property Management Firm, Escondido",
     rating: 5,
-    text: "Reliable weekly lawn service that keeps our property looking immaculate. Highly recommend their maintenance programs!",
-    service: "Lawn Care",
+    text: "We've tried 4 landscaping companies in 3 years. HP is the only one that treats our portfolio like their own. Reliability is everything.",
+    service: "Portfolio Management",
+    timeSaved: "6 hours/month",
   },
 ];
 
 export const STATS = [
-  { value: "15+", label: "Years Experience" },
-  { value: "5000+", label: "Projects Completed" },
-  { value: "98%", label: "Customer Satisfaction" },
-  { value: "50+", label: "Team Members" },
+  { value: "25+", label: "Years in Business" },
+  { value: "50,000+", label: "On-Time Services" },
+  { value: "99.4%", label: "Reliability Rate" },
+  { value: "4.2 hrs", label: "Avg. Monthly Time Saved" },
 ];
 
 export const NAV_LINKS = [
   { href: "/", label: "Home" },
+  { href: "/commercial", label: "Commercial" },
   { href: "/services", label: "Services" },
   { href: "/areas", label: "Service Areas" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
+
+export const COMMERCIAL_PACKAGES = [
+  {
+    id: "delegate",
+    name: "Delegate",
+    price: "$700",
+    period: "/month",
+    description: "For single properties and small offices",
+    features: [
+      "Weekly maintenance (fixed day/time)",
+      "Seasonal refresh (4x/year)",
+      "24-hour emergency response",
+      "Service-level agreement",
+      "Direct communication line",
+    ],
+    cta: "Start Delegating",
+    popular: false,
+  },
+  {
+    id: "replace",
+    name: "Replace",
+    price: "$1,200",
+    period: "/month",
+    description: "For 3-10 properties and HOAs",
+    features: [
+      "Everything in Delegate, plus:",
+      "Multi-property coordination",
+      "Dedicated account manager",
+      "Quarterly budget planning",
+      "Monthly photo reports",
+      "Tenant communication handling",
+    ],
+    cta: "Replace Your Headaches",
+    popular: true,
+  },
+  {
+    id: "invest",
+    name: "Invest",
+    price: "$2,500",
+    period: "/month",
+    description: "For large portfolios and property management firms",
+    features: [
+      "Everything in Replace, plus:",
+      "Tenant satisfaction surveys",
+      "2-hour priority emergency response",
+      "Annual master planning",
+      "Custom reporting dashboard",
+      "Preferred vendor status",
+    ],
+    cta: "Invest in Peace of Mind",
+    popular: false,
+  },
+];
+
+export const SLA_GUARANTEE = {
+  headline: "Our Guarantee: Miss a Service, Get It Free",
+  description: "We put our money where our mower is.",
+  terms: [
+    {
+      condition: "Miss a scheduled service window",
+      result: "That week is free",
+    },
+    {
+      condition: "Miss twice within 90 days",
+      result: "Cancel penalty-free + we pay your first month with a replacement vendor",
+    },
+  ],
+  footnote: "No excuses. No exceptions. That's the HP difference.",
+};

@@ -61,9 +61,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Professional landscaping services for San Diego County. Creating
-              beautiful, sustainable outdoor spaces that enhance your property
-              and lifestyle.
+              SLA-backed commercial landscaping for San Diego County. Property managers
+              and HOAs trust us for reliable, scheduled maintenance with zero vendor headaches.
             </p>
             <div className="flex gap-4">
               <motion.a

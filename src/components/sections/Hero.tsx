@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Phone, ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Shield, Clock, Users, Award } from "lucide-react";
 import { COMPANY_INFO } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -83,7 +83,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center bg-green-600/30 border border-green-500/30 rounded-full px-4 py-2 text-sm backdrop-blur-sm">
               <span className="w-2 h-2 bg-lime-400 rounded-full mr-2 animate-pulse" />
-              Serving San Diego County Since {COMPANY_INFO.foundedYear}
+              SLA-Backed Commercial Contracts • Since {COMPANY_INFO.foundedYear}
             </div>
           </motion.div>
 
@@ -92,16 +92,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight"
+            className="mt-6 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
           >
-            Transform Your
+            The Only Landscaping Company
             <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="block text-lime-300 mt-2"
             >
-              Outdoor Space
+              That Shows Up. Every. Single. Time.
             </motion.span>
           </motion.h1>
 
@@ -110,12 +110,25 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-6 text-xl sm:text-2xl text-green-100 max-w-3xl mx-auto leading-relaxed"
+            className="mt-6 text-xl sm:text-2xl text-green-100 max-w-4xl mx-auto leading-relaxed"
           >
-            Professional landscaping, irrigation, and hardscaping services for
-            homes and businesses throughout San Diego County. Beautiful,
-            sustainable landscapes built to last.
+            SLA-backed commercial maintenance contracts for San Diego businesses.
+            <span className="block mt-2 font-semibold text-white">
+              25 years. 50,000+ on-time services. Zero excuses.
+            </span>
           </motion.p>
+
+          {/* Value Proposition Callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-8 inline-block bg-white/10 backdrop-blur-sm border border-lime-400/30 rounded-xl px-6 py-4"
+          >
+            <p className="text-lg text-lime-100">
+              <span className="font-bold text-white">Stop managing vendors.</span> We become your landscaping department—scheduled, reliable, guaranteed.
+            </p>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -134,12 +147,12 @@ export default function Hero() {
                 "hover:scale-105 transform"
               )}
             >
-              Get Free Quote
+              Book Your Time Buyback Analysis
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
 
             <Link
-              href="/gallery"
+              href="/commercial"
               className={cn(
                 "group inline-flex items-center justify-center",
                 "border-2 border-white/40 hover:border-white",
@@ -149,23 +162,23 @@ export default function Hero() {
                 "hover:scale-105 transform"
               )}
             >
-              View Our Work
+              View Commercial Packages
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Link>
           </motion.div>
 
-          {/* Trust Badges */}
+          {/* Trust Badges - B2B Focused */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="mt-16 flex flex-wrap justify-center gap-8"
+            className="mt-16 flex flex-wrap justify-center gap-6 lg:gap-8"
           >
             {[
-              { icon: "✓", text: "Licensed & Insured" },
-              { icon: "★", text: "5-Star Rated" },
-              { icon: "💰", text: "Free Estimates" },
-              { icon: "🌱", text: "Eco-Friendly" },
+              { icon: Shield, text: "SLA Guarantee" },
+              { icon: Clock, text: "99.4% On-Time" },
+              { icon: Users, text: "Dedicated Account Managers" },
+              { icon: Award, text: "25+ Years Serving SD" },
             ].map((badge, index) => (
               <motion.div
                 key={badge.text}
@@ -174,8 +187,8 @@ export default function Hero() {
                 transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
                 className="flex items-center gap-3"
               >
-                <div className="w-12 h-12 bg-green-600/30 border border-lime-400/30 rounded-full flex items-center justify-center text-2xl backdrop-blur-sm">
-                  {badge.icon}
+                <div className="w-12 h-12 bg-green-600/30 border border-lime-400/30 rounded-full flex items-center justify-center backdrop-blur-sm">
+                  <badge.icon className="w-5 h-5 text-lime-300" />
                 </div>
                 <span className="text-sm font-medium">{badge.text}</span>
               </motion.div>
