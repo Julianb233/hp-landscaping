@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import FAQSection from "@/components/FAQSection";
+import QuoteFormModal from "@/components/QuoteFormModal";
 import { SERVICES, COMPANY_INFO } from "@/lib/constants";
 import { CheckCircle } from "lucide-react";
 
@@ -114,6 +115,9 @@ export default function ServicesPage() {
               Transform your outdoor space with our expert landscaping solutions.
               From design to maintenance, we handle every aspect of your landscape.
             </p>
+            <div className="mb-8">
+              <QuoteFormModal />
+            </div>
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-6 h-6 text-green-300" />
@@ -146,7 +150,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SERVICES.map((service) => (
+            {SERVICES.map((service, index) => (
               <ServiceCard
                 key={service.id}
                 id={service.id}
@@ -154,8 +158,13 @@ export default function ServicesPage() {
                 shortDescription={service.shortDescription}
                 icon={service.icon}
                 features={service.features}
+                index={index}
               />
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <QuoteFormModal />
           </div>
         </div>
       </section>

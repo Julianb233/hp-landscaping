@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingQuoteButton from "@/components/FloatingQuoteButton";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { COMPANY_INFO, SERVICE_AREAS, SERVICES } from "@/lib/constants";
 
 const inter = Inter({
@@ -207,6 +209,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingQuoteButton />
+        <ExitIntentPopup />
       </body>
     </html>
   );
