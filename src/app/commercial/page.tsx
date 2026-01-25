@@ -16,8 +16,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import Packages from "@/components/sections/Packages";
 import Guarantee from "@/components/sections/Guarantee";
 import { COMPANY_INFO, STATS, LOGO_URL } from "@/lib/constants";
@@ -57,7 +55,6 @@ export default function CommercialPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-br from-green-900 via-green-800 to-green-700 overflow-hidden">
@@ -288,8 +285,6 @@ export default function CommercialPage() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }

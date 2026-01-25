@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import FloatingQuoteButton from "@/components/FloatingQuoteButton";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { COMPANY_INFO, SERVICE_AREAS, SERVICES } from "@/lib/constants";

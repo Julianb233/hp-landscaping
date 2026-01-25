@@ -79,7 +79,7 @@ export default function LinksPage() {
             <div className="relative w-full h-full rounded-full bg-white/10 backdrop-blur-xl border border-white/20 p-2 overflow-hidden">
               <Image
                 src={LOGO_URL}
-                alt="HP Landscaping"
+                alt="HP Landscaping - Professional Landscaping Services in San Diego County"
                 fill
                 className="object-contain p-2"
                 unoptimized

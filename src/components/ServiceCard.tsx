@@ -45,7 +45,7 @@ export default function ServiceCard({ id, name, shortDescription, icon, features
           {image ? (
             <Image
               src={image}
-              alt={name}
+              alt={`${name} services in San Diego County - HP Landscaping`}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110"
             />
